@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Instrutorcasestudy.Models.Instructor>
+
+@{
+    ViewData["Title"] = "Instructor Records";
+}
+
+<div class="container mt-4">
+    <h2>Instructor Records</h2>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Add New Instructor</a>
+    </p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Designation</th>
+                <th>Major</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.FullName</td>
+                    <td>@item.Designation</td>
+                    <td>@item.Major</td>
+                    <td>@item.EmailAddress</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.InstructorId" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.InstructorId" class="btn btn-info btn-sm text-white">Details</a> 
+                        <a asp-action="Delete" asp-route-id="@item.InstructorId" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

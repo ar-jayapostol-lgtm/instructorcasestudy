@@ -1,0 +1,84 @@
+﻿@model Instrutorcasestudy.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Admin Registration";
+}
+
+<div class="container mt-4" style="max-width: 700px;">
+    <div class="text-center mb-3">
+        <h3 class="fw-bold">Admin Registration</h3>
+        <p class="text-muted">Create your admin/user account</p>
+    </div>
+
+    <form asp-action="Register" method="post" id="regForm">
+        <h6 class="fw-bold text-uppercase border-bottom pb-2 mb-3">PERSONAL INFORMATION</h6>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label asp-for="AdminID" class="form-label fw-bold">Admin ID</label>
+                <input asp-for="AdminID" class="form-control" placeholder="Enter Admin ID" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Age" class="form-label fw-bold">Age</label>
+                <input asp-for="Age" class="form-control" placeholder="Enter age" />
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="FirstName" class="form-label fw-bold">First Name</label>
+                <input asp-for="FirstName" class="form-control" placeholder="Enter first name" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="MiddleName" class="form-label fw-bold">Middle Name</label>
+                <input asp-for="MiddleName" class="form-control" placeholder="Enter middle name" />
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="LastName" class="form-label fw-bold">Last Name</label>
+                <input asp-for="LastName" class="form-control" placeholder="Enter last name" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Gender" class="form-label fw-bold">Gender</label>
+                <select asp-for="Gender" class="form-select">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="Address" class="form-label fw-bold">Address</label>
+                <input asp-for="Address" class="form-control" placeholder="Enter complete address" />
+            </div>
+        </div>
+
+        <h6 class="fw-bold text-uppercase border-bottom pb-2 mt-4 mb-3">ACCOUNT INFORMATION</h6>
+
+        <div class="row g-3">
+            <div class="col-12">
+                <label asp-for="Username" class="form-label fw-bold">Username</label>
+                <input asp-for="Username" class="form-control" />
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Password" class="form-label fw-bold">Password</label>
+                <input asp-for="Password" type="password" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="ConfirmPassword" class="form-label fw-bold">Confirm Password</label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control" />
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-danger w-100 mt-4" onclick="confirmRegister()">Register</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmRegister() {
+            if (confirm("Are you sure you want to register this account?")) {
+                document.getElementById("regForm").submit();
+            }
+        }
+    </script>
+}

@@ -1,0 +1,21 @@
+﻿@model Instrutorcasestudy.Models.Instructor
+
+@{
+    ViewData["Title"] = "Add Instructor";
+}
+
+<div class="container mt-3" style="max-width: 600px;">
+    <h4 class="mb-3">Add Instructor</h4>
+    <form asp-action="Create" method="post">
+        <div class="mb-2"><label class="form-label">FullName</label><input asp-for="FullName" class="form-control" /></div>
+        <div class="mb-2"><label class="form-label">Age</label><input asp-for="Age" class="form-control" /></div>
+        <div class="mb-2"><label class="form-label">Address</label><input asp-for="Address" class="form-control" /></div>
+        <div class="mb-2"><label class="form-label">Designation</label><input asp-for="Designation" class="form-control" /></div>
+        <div class="mb-2"><label class="form-label">Gender</label><input asp-for="Gender" class="form-control" /></div>
+        <div class="mb-2"><label class="form-label">Major</label><input asp-for="Major" class="form-control" /></div>
+        <div class="mb-2"><label class="form-label">BachelorDegree</label><input asp-for="BachelorDegree" class="form-control" /></div>
+        <div class="mb-2"><label class="form-label">EmailAddress</label><input asp-for="EmailAddress" class="form-control" /></div>
+        <div class="mb-3"><label class="form-label">ContactNumber</label><input asp-for="ContactNumber" class="form-control" /></div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

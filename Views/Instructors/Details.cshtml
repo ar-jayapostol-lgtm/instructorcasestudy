@@ -1,0 +1,47 @@
+﻿@model Instrutorcasestudy.Models.Instructor
+
+@{
+    ViewData["Title"] = "Instructor Details";
+}
+
+<div class="container mt-4" style="max-width: 650px;">
+    <div class="card shadow-sm border-0">
+        <div class="card-header text-white" style="background-color: #7b241c;">
+            <h4 class="mb-0">Instructor Details</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-4 text-muted">Full Name</dt>
+                <dd class="col-sm-8 fw-bold">@Model.FullName</dd>
+
+                <dt class="col-sm-4 text-muted">Age</dt>
+                <dd class="col-sm-8">@Model.Age</dd>
+
+                <dt class="col-sm-4 text-muted">Address</dt>
+                <dd class="col-sm-8">@Model.Address</dd>
+
+                <dt class="col-sm-4 text-muted">Designation</dt>
+                <dd class="col-sm-8">@Model.Designation</dd>
+
+                <dt class="col-sm-4 text-muted">Gender</dt>
+                <dd class="col-sm-8">@Model.Gender</dd>
+
+                <dt class="col-sm-4 text-muted">Major</dt>
+                <dd class="col-sm-8">@Model.Major</dd>
+
+                <dt class="col-sm-4 text-muted">Bachelor Degree</dt>
+                <dd class="col-sm-8">@Model.BachelorDegree</dd>
+
+                <dt class="col-sm-4 text-muted">Email Address</dt>
+                <dd class="col-sm-8">@Model.EmailAddress</dd>
+
+                <dt class="col-sm-4 text-muted">Contact Number</dt>
+                <dd class="col-sm-8">@Model.ContactNumber</dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-light text-end">
+            <a asp-action="Edit" asp-route-id="@Model.InstructorId" class="btn btn-warning me-2">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
